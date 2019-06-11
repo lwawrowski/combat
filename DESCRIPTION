@@ -1,0 +1,11 @@
+Package: combat
+Type: Package
+Title: Artificial intelligence engine for simple combat game
+Version: 0.1.0
+Author: person("Łukasz", "Wawrowski", email = "lukasz.wawrowski@ue.poznan.pl", role = c("aut", "cre"))
+Maintainer: The package maintainer <lukasz.wawrowski@ue.poznan.pl>
+Description: This package contains the set of functions utilize in two-player combat games. It allows to create simple hex-based game.
+    To simulate computer moves simple AI algorytm was implemented.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
