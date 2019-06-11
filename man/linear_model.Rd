@@ -2,7 +2,7 @@
 % Please edit documentation in R/linear_model.R
 \name{linear_model}
 \alias{linear_model}
-\title{Calculate beta coefficients for a straight line connecting two points. This function is used to calculate strength of attack with distance redcution.}
+\title{Linear model coefficents}
 \usage{
 linear_model(a, b)
 }

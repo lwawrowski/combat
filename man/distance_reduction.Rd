@@ -2,7 +2,7 @@
 % Please edit documentation in R/distance_reduction.R
 \name{distance_reduction}
 \alias{distance_reduction}
-\title{Calculate distance reduction value due to range and accuracy of the unit and distance from the target.}
+\title{Distance reduction value}
 \usage{
 distance_reduction(range_min, range_max, accuracy, distance)
 }

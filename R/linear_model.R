@@ -1,3 +1,5 @@
+#' Linear model coefficents
+#'
 #' Calculate beta coefficients for a straight line connecting two points. This function is used to calculate strength of attack with distance redcution.
 #'
 #' @param a first point - numeric vector of length of 2
