@@ -9,3 +9,6 @@ Description: This package contains the set of functions utilize in two-player co
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
+Suggests: 
+    testthat
+RoxygenNote: 6.1.1
