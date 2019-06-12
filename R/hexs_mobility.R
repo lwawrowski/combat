@@ -24,7 +24,7 @@ hexs_mobility <- function(hex_id, mobility = NULL, units_data, dist_matrix_data)
 
   if(!is.null(mobility)){
     assert_that(is.number(mobility), msg = "Mobility must be a number")
-    assert_that(mobility > 0, msg = "Mobility must be a positive number")
+    assert_that(mobility >= 0, msg = "Mobility must be greater or equal zero")
   }
 
   if(is.null(mobility)){
