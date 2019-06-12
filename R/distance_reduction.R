@@ -32,7 +32,7 @@ distance_reduction <- function(range_min, range_max, accuracy, distance){
   a <- c(range_min,1)
   b <- c(range_max,accuracy/10)
 
-  betas <- linear_model(a,b)
+  betas <- linear_model(a, b)
 
   y <- betas[2]*distance+betas[1]
 
