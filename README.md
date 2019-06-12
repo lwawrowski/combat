@@ -1,7 +1,7 @@
 # combat R package
 
 <!-- badges: start -->
-[![Travis build status](https://travis-ci.org/lwawrowski/combat.svg?branch=master)](https://travis-ci.org/lwawrowski/combat)
+[![Travis build status](https://travis-ci.org/lwawrowski/combat.svg?branch=master)](https://travis-ci.org/lwawrowski/combat?branch=master)
 [![Codecov test coverage](https://codecov.io/gh/lwawrowski/combat/branch/master/graph/badge.svg)](https://codecov.io/gh/lwawrowski/combat?branch=master)
 <!-- badges: end -->
 
