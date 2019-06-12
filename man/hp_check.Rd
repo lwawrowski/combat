@@ -23,6 +23,11 @@ Calculate possible health points for information purposes
 }
 \examples{
 
-hp_check(player_id = "ID9", opponent_id = "ID2",
+set.seed(123)
+p1 <- draw_units(price_limit = 50, units_data = units)
+p2 <- draw_units(price_limit = 50, units_data = units)
+units_game <- draw_hexs(p1, p2)
+
+hp_check(player_id = "ID9", opponent_id = "ID14",
 units_data = units_game, dist_matrix_data = dist_matrix)
 }
