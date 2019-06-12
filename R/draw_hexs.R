@@ -7,6 +7,7 @@
 #' @return Dataset of drawned units with hexs
 #' @export
 #' @importFrom dplyr mutate
+#' @importFrom assertthat assert_that
 #' @examples
 #'
 #' player1 <- draw_units(price_limit = 50, units_data = units)

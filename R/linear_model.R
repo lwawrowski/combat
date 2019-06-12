@@ -5,6 +5,8 @@
 #' @param a first point - numeric vector of length of 2
 #' @param b second point - numeric vector of length of 2
 #' @export
+#' @importFrom assertthat assert_that
+#' @importFrom assertthat noNA
 #' @return Beta coefficients for line which connects points a and b
 #' @examples
 #' linear_model(a = c(0, 10), b = c(10, 1))

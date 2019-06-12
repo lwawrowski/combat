@@ -7,6 +7,9 @@
 #' @param accuracy accuracy of the unit
 #' @param distance distance between unit and target
 #' @return distance reduction value from [0;1] interval
+#' @importFrom assertthat assert_that
+#' @importFrom assertthat is.number
+#' @importFrom assertthat noNA
 #' @export
 #' @examples
 #' distance_reduction(range_min = 1, range_max = 5, accuracy = 6, distance = 4)
