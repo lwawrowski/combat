@@ -22,5 +22,5 @@ distance reduction value from [0;1] interval
 Calculate distance reduction value due to range and accuracy of the unit and distance from the target.
 }
 \examples{
-distance_reduction(1, 5, 6, 4)
+distance_reduction(range_min = 1, range_max = 5, accuracy = 6, distance = 4)
 }

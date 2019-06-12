@@ -5,6 +5,7 @@
 #' @param price_limit limit of price within units can be sampled
 #' @param units_data dataset contains information of available units
 #' @return Dataset of drawned units according to price limit
+#' @export
 #' @importFrom dplyr filter
 #' @importFrom dplyr sample_n
 #' @importFrom dplyr count
@@ -16,7 +17,7 @@ draw_units <- function(price_limit = 50, units_data){
 
   assert_that(is.numeric(price_limit))
   assert_that(price_limit > 0)
-  assert_that(is.data.frame(units_data))
+  # assert_that(is.data.frame(units_data))
 
   units_drawned <- data.frame()
 

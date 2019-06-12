@@ -5,6 +5,7 @@
 #' @param player1 drawned units for player 1
 #' @param player2 drawned units for player 2
 #' @return Dataset of drawned units with hexs
+#' @export
 #' @importFrom dplyr mutate
 #' @examples
 #'

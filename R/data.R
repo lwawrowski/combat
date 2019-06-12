@@ -1,3 +1,9 @@
+#' Distance matrix
+#'
+#' Distance matrix for hex map with 357 hexs (16 x 23)
+#' @format A matrix with 357 rows and 357 columns
+"dist_matrix"
+
 #' Units data
 #'
 #' Examples of units in game. The variables are as follows:
@@ -17,6 +23,4 @@
 #' }
 #'
 #' @format A data frame with 5 rows and 11 variables
-#' @examples
-#' units()
 "units"

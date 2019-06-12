@@ -22,5 +22,6 @@ Vector with IDs of hexs where unit can move.
 Return a vector of hexs which are empty, so the unit can move on them.
 }
 \examples{
-hexs_mobility("ID8", units_data = units_game, dist_matrix_data = dist_matrix)
+hexs_mobility(hex_id = "ID8", units_data = units_game, dist_matrix_data = dist_matrix)
+hexs_mobility(hex_id = "ID8", mobility = 2, units_data = units_game, dist_matrix_data = dist_matrix)
 }

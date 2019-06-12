@@ -6,6 +6,7 @@
 #' @param mobility mobility of unit, default is NULL and then mobility is taken from units_data
 #' @param units_data dataset which contains information about units with its hexs
 #' @param dist_matrix_data distance matrix
+#' @export
 #' @return Vector with IDs of hexs where unit can move.
 #' @examples
 #' hexs_mobility(hex_id = "ID8", units_data = units_game, dist_matrix_data = dist_matrix)

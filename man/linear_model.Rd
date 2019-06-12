@@ -18,5 +18,5 @@ Beta coefficients for line which connects points a and b
 Calculate beta coefficients for a straight line connecting two points. This function is used to calculate strength of attack with distance redcution.
 }
 \examples{
-linear_model(c(0, 10), c(10, 1))
+linear_model(a = c(0, 10), b = c(10, 1))
 }

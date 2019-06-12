@@ -6,6 +6,7 @@
 #' @param range_min minimum range of the unit
 #' @param range_max maximum range of the unit
 #' @param dist_matrix_data distance matrix
+#' @export
 #' @return Vector with IDs of hexs which are in range of unit
 #' @examples
 #' hexs_range(hex_id = "ID8", range_min = 1, range_max = 5, dist_matrix_data = dist_matrix)
