@@ -11,5 +11,6 @@ test_that("check errors", {
   expect_error(distance_reduction(range_min = 1, range_max = 5, accuracy = 11, distance = 5))
   expect_error(distance_reduction(range_min = -1, range_max = 5, accuracy = 8, distance = 5))
   expect_error(distance_reduction(range_min = 5, range_max = 1, accuracy = 6, distance = 5))
+  expect_error(distance_reduction(range_min = 1, range_max = 10, accuracy = 10, distance = 100))
 })
 

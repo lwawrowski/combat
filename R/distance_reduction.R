@@ -18,11 +18,11 @@ distance_reduction <- function(range_min, range_max, accuracy, distance){
   assert_that(is.number(accuracy))
   assert_that(is.number(distance))
 
-  assert_that(range_min > 0)
-  assert_that(range_max > 0)
+  assert_that(range_min %in% 1:10, msg = "Range must be a number from 1 to 10.")
+  assert_that(range_max %in% 1:10, msg = "Range must be a number from 1 to 10.")
   assert_that(range_max > range_min, msg = "Maximum range must be greater than minimum range")
-  assert_that(accuracy %in% 1:10, msg = "Accuracy must be number from 1 to 10.")
-  assert_that(distance > 0)
+  assert_that(accuracy %in% 1:10, msg = "Accuracy must be a number from 1 to 10.")
+  assert_that(distance %in% 1:max(dist_matrix), msg = paste0("Distance must be a number from 1 to ", max(dist_matrix)))
 
   assert_that(noNA(range_min))
   assert_that(noNA(range_max))
