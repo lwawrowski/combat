@@ -12,7 +12,8 @@ LazyData: true
 Suggests: 
     testthat,
     knitr,
-    rmarkdown
+    rmarkdown,
+    covr
 Imports: 
     dplyr, assertthat
 RoxygenNote: 6.1.1
