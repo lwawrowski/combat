@@ -7,6 +7,7 @@
 #' @param units_data dataset contains information of all units in the game
 #' @param dist_matrix_data distance matrix
 #' @export
+#' @importFrom assertthat assert_that
 #' @return Possible number of health points in case of attack but without any boosters and discounts
 #' @examples
 #'
