@@ -19,7 +19,7 @@ hexs_mobility(hex_id, mobility = NULL, units_data, dist_matrix_data)
 Vector with IDs of hexs where unit can move.
 }
 \description{
-Give a vector of hexs which are empty, so the unit can move on them.
+Return a vector of hexs which are empty, so the unit can move on them.
 }
 \examples{
 hexs_mobility("ID8", units_data = units_game, dist_matrix_data = dist_matrix)

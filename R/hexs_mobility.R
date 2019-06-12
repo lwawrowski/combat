@@ -1,6 +1,6 @@
 #' Mobility hexs for unit
 #'
-#' Give a vector of hexs which are empty, so the unit can move on them.
+#' Return a vector of hexs which are empty, so the unit can move on them.
 #'
 #' @param hex_id id of hex where there is a unit
 #' @param mobility mobility of unit, default is NULL and then mobility is taken from units_data
@@ -16,12 +16,15 @@ hexs_mobility <- function(hex_id, mobility = NULL, units_data, dist_matrix_data)
 
   assert_that(is.character(hex_id))
   assert_that(is.data.frame(units_data))
+  assert_that(is.matrix(dist_matrix_data))
+
+  assert_that(hex_id %in% units_data$id, msg = paste0("There is no unit with ", hex_id, " in units_data"))
 
   if(is.null(mobility)){
     mobility <- as.numeric(units_data$mobil[units_data$id == hex_id])
   }
 
   hexs_all <- dist_matrix_data[hex_id,dist_matrix_data[hex_id,] <= mobility]
-  hexs_no_units <- hexs[!(names(hexs) %in% units_data$id)]
+  hexs_no_units <- hexs_all[!(names(hexs_all) %in% units_data$id)]
   return(hexs_no_units)
 }
