@@ -23,5 +23,6 @@ Calculate possible health points for information purposes
 }
 \examples{
 
-hp_check(player_id = "ID9", opponent_id = "ID2", units_data = units_game, dist_matrix_data = dist_matrix)
+hp_check(player_id = "ID9", opponent_id = "ID2",
+units_data = units_game, dist_matrix_data = dist_matrix)
 }

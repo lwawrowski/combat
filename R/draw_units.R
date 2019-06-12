@@ -10,6 +10,7 @@
 #' @importFrom dplyr sample_n
 #' @importFrom dplyr count
 #' @importFrom assertthat assert_that
+#' @importFrom magrittr "%>%"
 #' @examples
 #'
 #' player1 <- draw_units(price_limit = 50, units_data = units)
