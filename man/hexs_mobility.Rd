@@ -22,6 +22,13 @@ Vector with IDs of hexs where unit can move.
 Return a vector of hexs which are empty, so the unit can move on them.
 }
 \examples{
-hexs_mobility(hex_id = "ID8", units_data = units_game, dist_matrix_data = dist_matrix)
-hexs_mobility(hex_id = "ID8", mobility = 2, units_data = units_game, dist_matrix_data = dist_matrix)
+
+set.seed(123)
+load(units)
+p1 <- draw_units(price_limit = 50, units_data = units)
+p2 <- draw_units(price_limit = 50, units_data = units)
+units_game <- draw_hexs(p1, p2)
+
+hexs_mobility(hex_id = "ID9", units_data = units_game, dist_matrix_data = dist_matrix)
+hexs_mobility(hex_id = "ID9", mobility = 2, units_data = units_game, dist_matrix_data = dist_matrix)
 }

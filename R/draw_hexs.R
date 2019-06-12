@@ -6,9 +6,7 @@
 #' @param player2 drawned units for player 2
 #' @return Dataset of drawned units with hexs
 #' @export
-#' @importFrom dplyr mutate
 #' @importFrom assertthat assert_that
-#' @importFrom magrittr "%>%"
 #' @examples
 #'
 #' player1 <- draw_units(price_limit = 50, units_data = units)
@@ -35,9 +33,8 @@ draw_hexs <- function(player1, player2){
 
   units_battle_hexs <- merge(units_battle, hexs_battle, by="unit_id")
 
-  units_battle_hexs <- units_battle_hexs %>%
-    mutate(hp_c=hp,
-           id=as.character(id))
+  units_battle_hexs$hp_c <- units_battle_hexs$hp
+  units_battle_hexs$id <- as.character(units_battle_hexs$id)
 
   return(units_battle_hexs)
 

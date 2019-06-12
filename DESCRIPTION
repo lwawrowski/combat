@@ -12,5 +12,5 @@ LazyData: true
 Suggests: 
     testthat
 Imports: 
-    dplyr, assertthat, magrittr
+    dplyr, assertthat
 RoxygenNote: 6.1.1

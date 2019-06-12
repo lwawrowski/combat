@@ -6,11 +6,8 @@
 #' @param units_data dataset contains information of available units
 #' @return Dataset of drawned units according to price limit
 #' @export
-#' @importFrom dplyr filter
 #' @importFrom dplyr sample_n
-#' @importFrom dplyr count
 #' @importFrom assertthat assert_that
-#' @importFrom magrittr "%>%"
 #' @examples
 #'
 #' player1 <- draw_units(price_limit = 50, units_data = units)
@@ -31,19 +28,14 @@ draw_units <- function(price_limit = 50, units_data){
 
   while(points_left >= min_unit_price && nrow(units_drawned) < 10){
 
-    unit_draw <- units_data %>%
-      filter(price <= points_left) %>%
-      sample_n(1)
+    unit_draw <- sample_n(units_data[units_data$price <= points_left, ], 1)
 
     units_drawned <- rbind(units_drawned, unit_draw)
 
     points_left <- points_left - as.numeric(unit_draw$price)
 
     # only one boss
-    boss <- units_drawned %>%
-      filter(name == "boss") %>%
-      count() %>%
-      .$n
+    boss <- nrow(units_drawned[units_drawned$name == "boss",])
 
     if(boss != 0 && nrow(units_data[units_data$name == "boss",]) != 0){
       units_data <- units_data[units_data$name != "boss",]
