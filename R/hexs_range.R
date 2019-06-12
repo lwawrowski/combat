@@ -18,9 +18,10 @@ hexs_range <- function(hex_id, range_min, range_max, dist_matrix_data){
   assert_that(is.number(range_max))
   assert_that(is.matrix(dist_matrix_data))
 
-  assert_that(range_max > range_min, msg = "Maximum range must be greater than minimum range")
+  assert_that(range_max >= range_min, msg = "Maximum range must be greater or equal than minimum range")
   assert_that(range_min > 0)
   assert_that(range_max > 0)
+  assert_that(as.numeric(gsub("ID", "", hex_id)) <= nrow(dist_matrix), msg = "ID is out of this hex map")
 
   hexs <- names(which(dist_matrix_data[hex_id,] >= range_min & dist_matrix_data[hex_id,] <= range_max))
 
