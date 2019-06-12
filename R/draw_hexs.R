@@ -29,7 +29,7 @@ draw_hexs <- function(player1, player2){
 
   # draw hex
   hexs_battle <- data.frame(unit_id=c(paste0("p1id",1:units_n_p1),paste0("p2id",1:units_n_p2)),
-                            id=c(sample(paste0("ID", 1:16), units_n_p1),sample(paste0("ID", 342:357), units_n_p2)))
+                            id=c(sample(paste0("ID", 1:16), units_n_p1),sample(paste0("ID", 342:357), units_n_p2))) # available IDs of hexs
 
   units_battle_hexs <- merge(units_battle, hexs_battle, by="unit_id")
 
