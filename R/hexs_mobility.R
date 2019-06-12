@@ -13,7 +13,6 @@
 #' @examples
 #'
 #' set.seed(123)
-#' load(units)
 #' p1 <- draw_units(price_limit = 50, units_data = units)
 #' p2 <- draw_units(price_limit = 50, units_data = units)
 #' units_game <- draw_hexs(p1, p2)
