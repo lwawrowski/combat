@@ -1,0 +1,87 @@
+---
+title: "Combat game in R"
+author: "Łukasz Wawrowski"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(combat)
+set.seed(123)
+```
+
+## Introduction
+
+In current version of this package, 5 predefinied units are available and default hex map has 357 hexagons. Units with its features there are in the `units` dataset:
+
+```{r echo=FALSE}
+knitr::kable(units)
+```
+
+The `dist_matrix` dataset containts distances for all hexagons. Below first 20 rows and columns are presented:
+
+```{r echo=FALSE}
+knitr::kable(dist_matrix[1:20,1:20])
+```
+
+## Defining teams
+
+The game starting from drawing teams. For that aim `draw_units` function can be used. Each unit has a price and the argument of that function is maximum amount which user would like to spend for units. Units are drawing up to this threshold or maximum number of units, which is equal to 10.
+
+```{r}
+team1 <- draw_units(price_limit = 72, units_data = units)
+knitr::kable(team1)
+```
+
+As can be seen the sum of prices of drawned units is equal to `r sum(team1$price)`. In the same way second team is drawned.
+
+```{r}
+team2 <- draw_units(price_limit = 65, units_data = units)
+```
+
+In next stage for these units, places on the map are sampled. First team will be placed on the left-hand side of the map and the second on the opposite side.
+
+```{r}
+units_game <- draw_hexs(player1 = team1, player2 = team2)
+knitr::kable(units_game)
+```
+
+## Check mobility, range and health points
+
+Based on information where there is a unit it is possible to check on which hexagons unit can move and how far they are from current unit:
+
+```{r}
+hexs_mobility(hex_id = "ID8", units_data = units_game, dist_matrix_data = dist_matrix)
+```
+
+In very similar way it can be checked what hexagons are in range of unit:
+
+```{r}
+hexs_range(hex_id = "ID8", range_min = 1, range_max = 10, dist_matrix_data = dist_matrix)
+```
+
+It is also possible to check what would be an effect of attack based on attack points of unit:
+
+```{r}
+hp_check(player_id = "ID8", opponent_id = "ID2", units_data = units_game, dist_matrix_data = dist_matrix)
+```
+
+The chance of accurate shot depends on accuracy of unit and distance. It changes according to linear function:
+
+```{r}
+distance_reduction(range_min = 1, range_max = 10, accuracy = 4, distance = 10)
+distance_reduction(range_min = 1, range_max = 10, accuracy = 4, distance = 9)
+distance_reduction(range_min = 1, range_max = 10, accuracy = 4, distance = 1)
+```
+
+The biggest change for accurate shot is when the distance between units is equal to 1, the smallest when distance is equal to maximum range.

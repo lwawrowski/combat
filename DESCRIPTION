@@ -10,7 +10,10 @@ License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Suggests: 
-    testthat
+    testthat,
+    knitr,
+    rmarkdown
 Imports: 
     dplyr, assertthat
 RoxygenNote: 6.1.1
+VignetteBuilder: knitr
