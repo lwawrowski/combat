@@ -24,7 +24,7 @@ draw_hexs <- function(player1, player2){
 
   # add ID
   units_p1 <- data.frame(player1, player=-1, unit_id=paste0("p1id",1:units_n_p1))
-  units_p2 <- data.frame(player2, player=1, unit_id=paste0("p2id",1:units_n_p1))
+  units_p2 <- data.frame(player2, player=1, unit_id=paste0("p2id",1:units_n_p2))
   units_battle <- rbind(units_p1, units_p2)
 
   # draw hex
