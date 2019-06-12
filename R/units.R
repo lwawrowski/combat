@@ -1,7 +1,7 @@
 #' Units data
 #'
-#' Examples of units in game
-#' @format
+#' Examples of units in game. The variables are as follows:
+#'
 #' \describe{
 #' \item{name}{character; name of unit}
 #' \item{hp}{numeric; initial health points}
@@ -15,6 +15,8 @@
 #' \item{acc_min}{numeric; missing shot chance}
 #' \item{acc_max}{numeric; super shot chance}
 #' }
+#'
+#' @format A data frame with 5 rows and 11 variables
 #' @examples
 #' units()
 "units"

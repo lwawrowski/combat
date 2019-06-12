@@ -6,7 +6,7 @@
 #' @param b second point - numeric vector of length of 2
 #' @return Beta coefficients for line which connects points a and b
 #' @examples
-#' linear_model(c(0, 10), c(10, 1))
+#' linear_model(a = c(0, 10), b = c(10, 1))
 
 linear_model <- function(a, b){
 

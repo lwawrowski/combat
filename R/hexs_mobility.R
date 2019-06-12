@@ -8,7 +8,8 @@
 #' @param dist_matrix_data distance matrix
 #' @return Vector with IDs of hexs where unit can move.
 #' @examples
-#' hexs_mobility("ID8", units_data = units_game, dist_matrix_data = dist_matrix)
+#' hexs_mobility(hex_id = "ID8", units_data = units_game, dist_matrix_data = dist_matrix)
+#' hexs_mobility(hex_id = "ID8", mobility = 2, units_data = units_game, dist_matrix_data = dist_matrix)
 
 hexs_mobility <- function(hex_id, mobility = NULL, units_data, dist_matrix_data){
 
@@ -19,6 +20,11 @@ hexs_mobility <- function(hex_id, mobility = NULL, units_data, dist_matrix_data)
   assert_that(is.matrix(dist_matrix_data))
 
   assert_that(hex_id %in% units_data$id, msg = paste0("There is no unit with ", hex_id, " in units_data"))
+
+  if(!is.null(mobility)){
+    assert_that(is.number(mobility), msg = "Mobility must be a number")
+    assert_that(mobility > 0, msg = "Mobility must be a positive number")
+  }
 
   if(is.null(mobility)){
     mobility <- as.numeric(units_data$mobil[units_data$id == hex_id])

@@ -9,7 +9,7 @@
 #' @return Possible number of health points in case of attack but without any boosters and discounts
 #' @examples
 #'
-#' check_hp("")
+#' check_hp(player_id = "ID9", opponent_id = "ID2", units_data = units_game, dist_matrix_data = dist_matrix)
 
 check_hp <- function(player_id, opponent_id, units_data, dist_matrix_data){
 

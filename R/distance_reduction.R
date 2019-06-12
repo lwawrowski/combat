@@ -8,7 +8,7 @@
 #' @param distance distance between unit and target
 #' @return distance reduction value from [0;1] interval
 #' @examples
-#' distance_reduction(1, 5, 6, 4)
+#' distance_reduction(range_min = 1, range_max = 5, accuracy = 6, distance = 4)
 
 distance_reduction <- function(range_min, range_max, accuracy, distance){
 
@@ -19,6 +19,7 @@ distance_reduction <- function(range_min, range_max, accuracy, distance){
 
   assert_that(range_min > 0)
   assert_that(range_max > 0)
+  assert_that(range_max > range_min, msg = "Maximum range must be greater than minimum range")
   assert_that(accuracy %in% 1:10, msg = "Accuracy must be number from 1 to 10.")
   assert_that(distance > 0)
 
