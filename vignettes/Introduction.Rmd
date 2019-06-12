@@ -17,7 +17,6 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(combat)
-set.seed(123)
 ```
 
 ## Introduction
@@ -58,22 +57,33 @@ knitr::kable(units_game)
 
 ## Check mobility, range and health points
 
+For further examples two first IDs of hexagons will be used:
+
+```{r}
+p_id <- units_game$id[1]
+p_id
+
+o_id <- units_game$id[2]
+o_id
+```
+
+
 Based on information where there is a unit it is possible to check on which hexagons unit can move and how far they are from current unit:
 
 ```{r}
-hexs_mobility(hex_id = "ID8", units_data = units_game, dist_matrix_data = dist_matrix)
+hexs_mobility(hex_id = p_id, units_data = units_game, dist_matrix_data = dist_matrix)
 ```
 
 In very similar way it can be checked what hexagons are in range of unit:
 
 ```{r}
-hexs_range(hex_id = "ID8", range_min = 1, range_max = 10, dist_matrix_data = dist_matrix)
+hexs_range(hex_id = p_id, range_min = 1, range_max = 10, dist_matrix_data = dist_matrix)
 ```
 
 It is also possible to check what would be an effect of attack based on attack points of unit:
 
 ```{r}
-hp_check(player_id = "ID8", opponent_id = "ID2", units_data = units_game, dist_matrix_data = dist_matrix)
+hp_check(player_id = p_id, opponent_id = o_id, units_data = units_game, dist_matrix_data = dist_matrix)
 ```
 
 The chance of accurate shot depends on accuracy of unit and distance. It changes according to linear function:
